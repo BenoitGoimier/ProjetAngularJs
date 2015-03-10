@@ -5,7 +5,7 @@ module.exports=function() {
 	factory.breweries.refresh="all";//all|ask
 	factory.breweries.update="immediate";//deffered|immediate
 	factory.server.privateToken="";
-	factory.server.restServerUrl="http://127.0.0.1/rest-open-beer/";
-	factory.server.force=false;
+	factory.server.restServerUrl="http://localhost/angularJs/ProjetAngularJs/rest-open-beer/";
+	factory.server.force=true;
 	return factory;
 };
