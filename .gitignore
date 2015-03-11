@@ -48,3 +48,4 @@ Temporary Items
 # config base
 my-open-beer-angular/base.html
 my-open-beer-angular/config/configFactory.js
+rest-open-beer/public/index.php
