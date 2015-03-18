@@ -12,23 +12,23 @@ module.exports=function($scope,config,$location,rest,save,$document,modalService
             if(angular.isUndefined(beer)){
                 beer=$scope.activeBeer;
             }else{
-                config.activeBrewery=angular.copy(brewery);
-                config.activeBrewery.reference=brewery;
+                config.activeBeer=angular.copy(beer);
+                config.activeBeer.reference=beer;
             }
             $scope.data.posted={
-                "name" : brewery.name,
-                "url"  : brewery.url
+                "name" : beer.name,
+                "url"  : beer.url
             };
 
-            config.activeBrewery.reference.name=$scope.activeBrewery.name;
-            config.activeBrewery.reference.url=$scope.activeBrewery.url;
-            config.activeBrewery.reference.updated_at=new Date();
+            config.activeBeer.reference.name=$scope.activeBeer.name;
+            config.activeBeer.reference.url=$scope.activeBeer.url;
+            config.activeBeer.reference.updated_at=new Date();
 
-            if(config.breweries.update==="immediate" || force)
-                rest.put(config.activeBrewery.id,$scope.data,"breweries",config.activeBrewery.name,callback);
+            if(config.beers.update==="immediate" || force)
+                rest.put(config.activeBeer.id,$scope.data,"breweries",config.activeBeer.name,callback);
             else{
-                config.activeBrewery.reference.flag="Updated";
-                save.addOperation("Updated",$scope.update,config.activeBrewery.reference);
+                config.activeBeer.reference.flag="Updated";
+                save.addOperation("Updated",$scope.update,config.activeBeer.reference);
                 result=true;
             }
         }else{
