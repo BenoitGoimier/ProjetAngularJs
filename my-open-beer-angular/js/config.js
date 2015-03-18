@@ -20,7 +20,7 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 		controller: 'BreweryUpdateController'
 	}).when('/beers', {
 		templateUrl: 'templates/beers/main.html',
-		controller: 'BreweriesController'
+		controller: 'BeersController'
 	}).when('/saves', {
 		templateUrl: 'templates/saveMain.html',
 		controller: 'SaveController'
