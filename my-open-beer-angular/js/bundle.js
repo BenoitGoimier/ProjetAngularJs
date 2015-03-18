@@ -137,7 +137,7 @@ module.exports=function(){
 	};
 };
 },{}],"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\app.js":[function(require,module,exports){
-angular.module("mainApp",["ngRoute","ngResource","ngAnimate",require("./breweries/breweriesModule"),require("./config/configModule")]),require("./beers/beersModule").
+angular.module("mainApp",["ngRoute","ngResource","ngAnimate",require("./breweries/breweriesModule"),require("./config/configModule"),require("./beers/beersModule")]).
 controller("MainController", ["$scope","$location","save","$window",require("./mainController")]).
 controller("SaveController", ["$scope","$location","save",require("./save/saveController")]).
 service("rest", ["$http","$resource","$location","config","$sce",require("./services/rest")]).
