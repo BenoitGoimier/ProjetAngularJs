@@ -19,22 +19,14 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 		templateUrl: 'templates/breweries/breweryForm.html',
 		controller: 'BreweryUpdateController'
 	}).when('/beers', {
-<<<<<<< HEAD
 		templateUrl: 'templates/beers/main.html',
 		controller: 'BeersController'
-	}).when('/saves', {
-		templateUrl: 'templates/saveMain.html',
-		controller: 'SaveController'
-=======
-            templateUrl: 'templates/beers/main.html',
-            controller: 'BreweriesController'
     }).when('/beers/new', {
         templateUrl: 'templates/beers/beerForm.html',
         controller: 'BeerAddController'
-    }).when('/saves', {
-        templateUrl: 'templates/saveMain.html',
-        controller: 'SaveController'
->>>>>>> bd0a8bec8475d7d44cd604a01c8d8a5112df20cd
+	}).when('/saves', {
+		templateUrl: 'templates/saveMain.html',
+		controller: 'SaveController'
 	}).when('/config', {
 		templateUrl: 'templates/config.html',
 		controller: 'ConfigController'
