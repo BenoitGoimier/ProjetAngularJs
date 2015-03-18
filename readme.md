@@ -29,10 +29,3 @@ config rest js
 4. changer "http://localhost/angularJs/" par la localisation du dossier "ProjetAngularJs"
 
 ---------
-
-config phalcon
---------------
-1. Aller dans le fichier :
-2. rest-open-beer/public/index.php
-3. trouver la ligne ""host" =>" (ligne 21)
-4. changer "localhost" par l'url de base du serveur
