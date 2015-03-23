@@ -5,17 +5,17 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 	
 	$scope.messages=rest.messages;
 	
-	if(config.breweries.refresh==="all" || !config.breweries.loaded){
+	if(config.beers.refresh==="all" || !config.beers.loaded){
 		$scope.data.load=true;
-		rest.getAll($scope.data,"breweries");
-		config.breweries.loaded=true;
+		rest.getAll($scope.data,"beers");
+		config.beers.loaded=true;
 	}else{
-		$scope.data["breweries"]=config.breweries.all;
+		$scope.data["beers"]=config.beers.all;
 	}
 	$scope.allSelected=false;
 	
 	$scope.selectAll=function(){
-		angular.forEach($scope.data.breweries, function(value, key) {
+		angular.forEach($scope.data.beers, function(value, key) {
 			value.selected=$scope.allSelected;
 		});
 	};
@@ -29,11 +29,11 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 	};
 	
 	$scope.refreshOnAsk=function(){
-		return config.breweries.refresh == 'ask';
+		return config.beers.refresh == 'ask';
 	};
 	
 	$scope.defferedUpdate=function(){
-		return config.breweries.update == 'deffered';
+		return config.beers.update == 'deffered';
 	};
 	
 	$scope.setActive=function(beer){
@@ -60,7 +60,7 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 	
 	$scope.countSelected=function(){
 		var result=0;
-		angular.forEach($scope.data.breweries, function(value, key) {
+		angular.forEach($scope.data.beers, function(value, key) {
 			if(value.selected && !value.deleted)
 				result++;
 		});
@@ -69,7 +69,7 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 	
 	$scope.hideDeleted=function(){
 		$scope.mustHideDeleted=!$scope.mustHideDeleted;
-		angular.forEach($scope.data.breweries, function(value, key) {
+		angular.forEach($scope.data.beers, function(value, key) {
 			if($scope.mustHideDeleted){
 				if(value.flag==='Deleted')
 					value.deleted=true;
@@ -84,7 +84,7 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 			$scope.activeBeer=beer;
 		config.activeBeer=angular.copy($scope.activeBeer);
 		config.activeBeer.reference=$scope.activeBeer;
-		$location.path("breweries/update");
+		$location.path("beers/update");
 	}
 	
 	$scope.update=function(beer,force,callback){
@@ -96,18 +96,18 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 		    "url"  : beer.url
 		  }
 		};
-		$scope.data.breweries.push(beer);
+		$scope.data.beers.push(beer);
 		beer.created_at=new Date();
-			if(config.breweries.update==="immediate" || force){
-				rest.post($scope.data,"breweries",beer.name,callback);
+			if(config.beers.update==="immediate" || force){
+				rest.post($scope.data,"beers",beer.name,callback);
 			}else{
 				save.addOperation("New",$scope.update,beer);
-				$location.path("breweries");
+				$location.path("beers");
 			}
 	}
 	
 	$scope.remove=function(){
-		angular.forEach($scope.data.breweries, function(value, key) {
+		angular.forEach($scope.data.beers, function(value, key) {
 			if(value.selected){
 				$scope.removeOne(value);
 			}
@@ -115,9 +115,9 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 		return true;
 	};
 	$scope.removeOne=function(beer,force,callback){
-		if(config.breweries.update==="immediate" || force){
+		if(config.beers.update==="immediate" || force){
 			beer.deleted=true;
-			rest.remove(beer,"breweries",callback);
+			rest.remove(beer,"beers",callback);
 		}else{
 			save.addOperation("Deleted",$scope.removeOne,beer);
 			beer.deleted=$scope.hideDeleted;

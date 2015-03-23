@@ -24,6 +24,9 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
     }).when('/beers/new', {
         templateUrl: 'templates/beers/beersForm.html',
         controller: 'BeerAddController'
+    }).when('/beers/update', {
+        templateUrl: 'templates/beers/beersForm.html',
+        controller: 'BeerUpdateController'
 	}).when('/saves', {
 		templateUrl: 'templates/saveMain.html',
 		controller: 'SaveController'
