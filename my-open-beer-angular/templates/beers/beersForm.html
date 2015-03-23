@@ -1,0 +1,37 @@
+<form name="frmbeer" data-ng-submit="frmbeer.$valid && update()" novalidate data-ng-init="setFormScope(this)">
+    <div class="form-group" data-ng-class="{'has-error has-feedback': frmBeer.url.$invalid && frmBeer.url.$dirty }">
+        <label for="url">Photo</label>
+        <input class="form-control" type="url" data-ng-model="activeBeer.url" placeholder="Entrez l'url de la photo" required id="url" name="url">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group" data-ng-class="{'has-error has-feedback': frmBeer.name.$invalid && frmBeer.name.$dirty}">
+        <label for="name">Nom</label>
+        <input class="form-control" type="text" data-ng-model="activeBeer.name" placeholder="Entrez un nom..." required
+               id="name" name="name">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error has-feedback': frmBeer.description.$invalid && frmBeer.description.$dirty }">
+        <label for="description">Description</label>
+        <input class="form-control" type="text" data-ng-model="activeBeer.description"
+               placeholder="Entrez une description" required id="description" name="description">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error has-feedback': frmBeer.id.$invalid && frmBeer.idBrewery.$dirty }">
+        <label for="idBrewery">Brasserie</label>
+        <select class="form-control" required data-ng-model="activeBeer.idBrewery" id="idBrewery" name="idBrewery">
+            <option data-ng-repeat="brewery in breweries.breweries" value="{{ brewery.id }}">
+                {{ brewery.name }}
+            </option>
+        </select>
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="created_at">Date de création</label>
+        <input class="form-control" type="text" data-ng-model="activeBeer.created_at" id="created_at" name="created_at"
+               disabled="disabled">
+    </div>
+    <button type="submit" class="btn btn-default" data-ng-click="exit=true">Valider</button>
+    &nbsp;<a href="beers" class="btn btn-default" data-ng-click="exit=true">Annuler</a>
+</form>
