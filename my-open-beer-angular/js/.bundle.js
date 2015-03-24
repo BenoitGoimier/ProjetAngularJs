@@ -559,11 +559,12 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 };
 },{}],"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweriesModule.js":[function(require,module,exports){
 var appBreweries=angular.module("BreweriesApp", []).
+controller("BreweryDetailsController",["$scope","config","$location",require("./breweryDetailsController")]).
 controller("BreweriesController", ["$scope","rest","$timeout","$location","config","$route","save",require("./breweriesController")]).
 controller("BreweryAddController",["$scope","config","$location","rest","save","$document","modalService",require("./breweryAddController")]).
 controller("BreweryUpdateController",["$scope","config","$location","rest","save","$document","modalService","$controller",require("./breweryUpdateController")]);
 module.exports=angular.module("BreweriesApp").name;
-},{"./breweriesController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweriesController.js","./breweryAddController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryAddController.js","./breweryUpdateController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryUpdateController.js"}],"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryAddController.js":[function(require,module,exports){
+},{"./breweriesController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweriesController.js","./breweryAddController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryAddController.js","./breweryDetailsController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryDetailsController.js","./breweryUpdateController":"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryUpdateController.js"}],"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryAddController.js":[function(require,module,exports){
 module.exports=function($scope,config,$location,rest,save,$document,modalService) {
 	
 	$scope.data={};
@@ -618,6 +619,20 @@ module.exports=function($scope,config,$location,rest,save,$document,modalService
 		}
 		return result;
 	}
+};
+},{}],"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryDetailsController.js":[function(require,module,exports){
+module.exports=function($scope,config,$location) {
+
+    $scope.brewery = config.activeBrewery;
+
+    if (angular.isUndefined(config.activeBrewery)) {
+        $location.path("breweries/");
+    }
+    else{
+        if($scope.brewery.photo == null || $scope.brewery.photo == ""){
+            $scope.brewery.photo = "breweries.jpg";
+        }
+    }
 };
 },{}],"C:\\wamp\\www\\angularJs\\ProjetAngularJs\\my-open-beer-angular\\js\\breweries\\breweryUpdateController.js":[function(require,module,exports){
 module.exports=function($scope,config,$location,rest,save,$document,modalService, $controller){
