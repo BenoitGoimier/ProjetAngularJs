@@ -2,22 +2,22 @@
     <div class="panel-heading">{{ beer.name }}</div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <a href="#" class="thumbnail">
-                    <img ng-src="img/{{ beer.photo }}" alt="{{ beer.name }}">
+                    <img ng-src="{{ beer.photo }}" alt="{{ beer.name }}">
                 </a>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                     <strong>Nom :</strong><br>
                     {{ beer.name }}<br><br>
                     <strong>Description :</strong><br>
                     {{ beer.description }}<br><br>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <strong>Date de création :</strong><br>
                         {{ beer.created_at }}
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-md-offset-1">
                         <strong>Date de mise à jour :</strong><br>
                         {{ beer.updated_at }}<br><br>
                     </div>
@@ -25,11 +25,11 @@
                 <div class="row">
                     <div class="col-md-9">
                         <strong>Brasseur :</strong><br>
-                        {{ getBrewery() }}
+                        {{ beer.IdBrewery }}
                     </div>
                     <div class="col-md-3"><br>
                         <div class="btn-group" role="group">
-                            <a class="btn btn-default" ng-click="showBrewery()">Afficher brasseur</a>
+                            <a class="btn btn-success" ng-click="showBrewery()">Afficher le brasseur</a>
                         </div>
                     </div>
                 </div>
@@ -38,5 +38,5 @@
     </div>
 </div>
 <div class="btn-group" role="group">
-    <a class="btn btn-default" href="beers">Retour à la liste des bières</a>
+    <a class="btn btn-warning" href="beers">Retour à la liste des bières</a>
 </div>
