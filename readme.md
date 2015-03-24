@@ -29,3 +29,26 @@ config rest js
 4. changer "http://localhost/angularJs/" par la localisation du dossier "ProjetAngularJs"
 
 ---------
+
+---------
+
+Brasseries
+----------
+
+Affichage liste
+Modification
+Ajout
+Suppression
+
+Bières
+------
+
+Affichage liste
+Modification
+Ajout
+Suppression
+
+Config
+------
+
+Modification de la config
