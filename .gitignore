@@ -48,4 +48,5 @@ Temporary Items
 # config base
 my-open-beer-angular/base.html
 my-open-beer-angular/js/config/configFactory.js
+my-open-beer-angular/js/config/*.js
 my-open-beer-angular/js/bundle.js
