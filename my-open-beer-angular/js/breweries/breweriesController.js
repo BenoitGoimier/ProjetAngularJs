@@ -27,6 +27,18 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 	$scope.showUpdate=function(){
 		return angular.isDefined($scope.activeBrewery);
 	};
+
+    $scope.showDetails=function(){
+        return angular.isDefined($scope.activeBrewery);
+    };
+    
+    $scope.details=function(brewery){
+        if(angular.isDefined(brewery))
+            $scope.activeBrewery=brewery;
+        config.activeBrewery=angular.copy($scope.activeBrewery);
+        config.activeBrewery.reference=$scope.activeBrewery;
+        $location.path("breweries/details");
+    };
 	
 	$scope.refreshOnAsk=function(){
 		return config.breweries.refresh == 'ask';

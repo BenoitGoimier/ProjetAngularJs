@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3">
                 <a href="#" class="thumbnail">
-                    <img ng-src="img/{{ brewery.photo }}" alt="{{ brewery.name }}">
+                    <img ng-src="{{ brewery.photo }}" alt="{{ brewery.name }}">
                 </a>
             </div>
             <div class="col-md-9">
@@ -24,7 +24,7 @@
                 </div>
                 <br>
                 <div class="btn-group" role="group">
-                    <a class="btn btn-default" ng-click="showBeers()">Voir les bières (X)</a>
+                    <a class="btn btn-success" ng-click="showBeers()">Voir les bières (X)</a>
                 </div>
                 </div>
             </div>
@@ -32,5 +32,5 @@
     </div>
 </div>
 <div class="btn-group" role="group">
-    <a class="btn btn-default" href="breweries">Retour à la liste des brasseries</a>
+    <a class="btn btn-warning" href="breweries">Retour à la liste des brasseries</a>
 </div>

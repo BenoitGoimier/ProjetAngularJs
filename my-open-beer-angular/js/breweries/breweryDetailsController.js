@@ -7,7 +7,7 @@ module.exports=function($scope,config,$location) {
     }
     else{
         if($scope.brewery.photo == null || $scope.brewery.photo == ""){
-            $scope.brewery.photo = "breweries.jpg";
+            $scope.brewery.photo = "http://sharenews.co.za/wp-content/uploads/2014/10/Breweries-Reading-PA.jpg";
         }
     }
 };
