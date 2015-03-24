@@ -22,11 +22,14 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 		templateUrl: 'templates/beers/main.html',
 		controller: 'BeersController'
     }).when('/beers/new', {
-        templateUrl: 'templates/beers/beersForm.html',
+        templateUrl: 'templates/beers/beerForm.html',
         controller: 'BeerAddController'
     }).when('/beers/update', {
-        templateUrl: 'templates/beers/beersForm.html',
+        templateUrl: 'templates/beers/beerForm.html',
         controller: 'BeerUpdateController'
+    }).when('/beers/details', {
+        templateUrl: 'templates/beers/details.html',
+        controller: 'BeerDetailsController'
 	}).when('/saves', {
 		templateUrl: 'templates/saveMain.html',
 		controller: 'SaveController'

@@ -17,11 +17,11 @@ module.exports=function($scope,config,$location,rest,save,$document,modalService
             }
             $scope.data.posted={
                 "name" : beer.name,
-                "url"  : beer.url
+                "photo"  : beer.photo
             };
 
             config.activeBeer.reference.name=$scope.activeBeer.name;
-            config.activeBeer.reference.url=$scope.activeBeer.url;
+            config.activeBeer.reference.photo=$scope.activeBeer.photo;
             config.activeBeer.reference.updated_at=new Date();
 
             if(config.beers.update==="immediate" || force)
