@@ -9,7 +9,7 @@ module.exports = function ($scope, config, $location, rest, save, $document, mod
     $scope.setFormScope = function (form) {
         $scope.frmBeer = form;
     };
-    var onRouteChangeOff = $scope.$on('$locationChangeStart', function routeChange(event, newUrl, oldUrl) {
+    var onRouteChangeOff = $scope.$on('$locationChangeStart', function routeChange(event, newPhoto, oldPhoto) {
         if (!$scope.frmBeer || !$scope.frmBeer.$dirty || $scope.exit) return;
 
         var alert = modalService.showModal("Sortie", "<b>Attention</b>, si vous continuez, vous perdez les modifications en cours.<br>Enregistrer avant sortie ?", function (value) {
@@ -17,12 +17,12 @@ module.exports = function ($scope, config, $location, rest, save, $document, mod
                 if (value == "Enregistrer et continuer") {
                     onRouteChangeOff();
                     if (selfScope._update() == true) {
-                        $location.path(newUrl.substring($location.absUrl().length - $location.url().length));
+                        $location.path(newPhoto.substring($location.absPhoto().length - $location.photo().length));
                     }
                 } else if (value == "Continuer") {
                     console.log(value);
                     onRouteChangeOff();
-                    $location.path(newUrl.substring($location.absUrl().length - $location.url().length));
+                    $location.path(newPhoto.substring($location.absPhoto().length - $location.photo().length));
                 }
             }
         );
