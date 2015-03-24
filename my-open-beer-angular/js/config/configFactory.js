@@ -13,6 +13,6 @@ module.exports=function() {
 
 	factory.server.privateToken="";
 	factory.server.restServerUrl="http://localhost/angularJs/ProjetAngularJs/rest-open-beer/";
-	factory.server.force=false;
+	factory.server.force=true;
 	return factory;
 };
