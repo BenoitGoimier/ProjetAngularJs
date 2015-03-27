@@ -32,23 +32,25 @@ config rest js
 
 ---------
 
+Se qui fonctionne dans notre projet :
+
 Brasseries
 ----------
 
-Affichage liste
-Modification
-Ajout
-Suppression
+1. Affichage en liste
+2. Modification
+3. Ajout
+4. Suppression
 
 Bières
 ------
 
-Affichage liste
-Modification
-Ajout
-Suppression
+1. Affichage liste
+2. Modification
+3. Ajout
+4. Suppression
 
 Config
 ------
 
-Modification de la config
+1. Modification de la config

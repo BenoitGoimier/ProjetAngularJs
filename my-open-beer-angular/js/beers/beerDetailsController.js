@@ -9,5 +9,13 @@ module.exports=function($scope,config,$location) {
             $scope.beer.photo = "./img/beer.jpg";
         }
     }
+
+    $scope.detailsBrewery=function(brewery){
+        if(angular.isDefined(brewery))
+            $scope.activeBrewery=$scope.beer.idBrewery;
+        config.activeBrewery=angular.copy($scope.activeBrewery);
+        config.activeBrewery.reference=$scope.activeBrewery;
+        $location.path("breweries/details");
+    }; 
 };
 
