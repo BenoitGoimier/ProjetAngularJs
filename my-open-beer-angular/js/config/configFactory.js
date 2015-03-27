@@ -12,7 +12,7 @@ module.exports=function() {
 
 
 	factory.server.privateToken="";
-	factory.server.restServerUrl="http://localhost/angularJs/ProjetAngularJs/rest-open-beer/";
+	factory.server.restServerUrl="http://localhost:8888/ProjetAngularJs/rest-open-beer/";
 	factory.server.force=true;
 	return factory;
 };

@@ -53,7 +53,8 @@ class Beers extends MainRestController{
         	throw new NotFound("Mise à jour : La bière '".$obj["name"]."' n'existe plus dans la base de données.");
         	return array();
         }else{
-	        $beer->setName($obj["name"]);
+            $beer->setName($obj["name"]);
+            $beer->setPhoto($obj["photo"]);
 	        $beer->setDescription($obj["description"]);
 	        $beer->setAbv($obj["abv"]);
 	        $beer->setIdBrewery($obj["idBrewery"]);

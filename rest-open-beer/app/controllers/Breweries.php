@@ -45,6 +45,7 @@ class Breweries extends MainRestController{
 				return array();
 			}else{
 				$brewery->setName($obj["name"]);
+                $brewery->setPhoto($obj["photo"]);
 				$brewery->setUrl($obj["url"]);
 				$brewery->setUpdatedAt((new DateTime())->format('Y-m-d H:i:s'));
 				try{
