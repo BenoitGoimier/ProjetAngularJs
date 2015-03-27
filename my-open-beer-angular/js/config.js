@@ -21,6 +21,9 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
     }).when('/breweries/details', {
         templateUrl: 'templates/breweries/details.html',
         controller: 'BreweryDetailsController'
+    }).when('/breweries/:id/details', {
+        templateUrl: 'templates/breweries/details.html',
+        controller: 'BreweryDetailsController'
 	}).when('/beers', {
 		templateUrl: 'templates/beers/main.html',
 		controller: 'BeersController'

@@ -1,6 +1,9 @@
 module.exports=function($scope,config,$location) {
 
-    $scope.brewery = config.activeBrewery;
+    if (config.activeBrewery==null || config.activeBrewery =="")
+        $scope.brewery = $routeParams
+    else
+        $scope.brewery = config.activeBrewery;
 
     if (angular.isUndefined(config.activeBrewery)) {
         $location.path("breweries/");
