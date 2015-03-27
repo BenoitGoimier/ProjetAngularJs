@@ -32,25 +32,28 @@ config rest js
 
 ---------
 
-Se qui fonctionne dans notre projet :
+Fonction du projet :
+------------------
+Accueil : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/
+
 
 Brasseries
 ----------
 
-1. Affichage en liste
-2. Modification
-3. Ajout
-4. Suppression
+1. Affichage en liste : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/breweries
+2. Modification : cliquer sur une brasserie puis sur modifier : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/breweries/update
+3. Ajout: http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/breweries/new
+4. Suppression : cocher la brasserie puis cliquer sur supprimer
 
 Bières
 ------
 
-1. Affichage liste
-2. Modification
-3. Ajout
-4. Suppression
+1. Affichage liste : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/beers
+2. Modification : cliquer sur une bière puis sur modifier : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/beers/details
+3. Ajout : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/beers/new
+4. Suppression : : cocher la bière puis cliquer sur supprimer
 
 Config
 ------
 
-1. Modification de la config
+1. Modification de la config : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/config
