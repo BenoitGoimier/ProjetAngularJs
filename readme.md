@@ -57,3 +57,5 @@ Config
 ------
 
 1. Modification de la config : http://localhost/angularJs/ProjetAngularJs/my-open-beer-angular/config
+
+projet réalisé par Benoit Goimier et Simon Choquet
